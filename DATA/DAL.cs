@@ -43,7 +43,14 @@ namespace IdanLalezari326643269.DATA
         }
         public static DataTable OpenTable(string tableName)
         {
-            GetDataSet("Select * from " + tableName);//פתיחת טבלה 
+            try
+            {
+                GetDataSet("Select * from " + tableName);//פתיחת טבלה 
+            }
+            catch (Exception ex)
+            {
+                LOGGER.Logger.PrintLog("error in OpenTable() func: " + ex.Message, ENUM.Enums.LogType.Error);
+            }
             return (ds.Tables[0]);
         }
 

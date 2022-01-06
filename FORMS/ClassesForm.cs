@@ -57,5 +57,18 @@ namespace IdanLalezari326643269.FORMS
             count = 0;
             DisplayRecords(0);
         }
+
+        protected void DisplayRecords(int currentRow)
+        {
+            base.DisplayRecords(currentRow);
+            Table = DATA.DAL.GetSqlTable("SELECT FirstName, LastName FROM Students WHERE ClassName = '" + ClassName_Input_string_1.Text + "'");
+            UTILITIES.DisplayUtilities.FillDataGrid(ClassStudents_dataGridView, Table);
+        }
+
+        private void ClassName_Input_string_1_TextChanged(object sender, EventArgs e)
+        {
+            Table = DATA.DAL.GetSqlTable("SELECT FirstName, LastName FROM Students WHERE ClassName = '" + ClassName_Input_string_1.Text + "'");
+            UTILITIES.DisplayUtilities.FillDataGrid(ClassStudents_dataGridView, Table);
+        }
     }
 }

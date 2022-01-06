@@ -31,6 +31,8 @@ namespace IdanLalezari326643269.FORMS
         {
             this.CLassName_Lable = new System.Windows.Forms.Label();
             this.ClassName_Input_string_1 = new System.Windows.Forms.TextBox();
+            this.ClassStudents_dataGridView = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.ClassStudents_dataGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // Title
@@ -67,12 +69,22 @@ namespace IdanLalezari326643269.FORMS
             this.ClassName_Input_string_1.Name = "ClassName_Input_string_1";
             this.ClassName_Input_string_1.Size = new System.Drawing.Size(100, 20);
             this.ClassName_Input_string_1.TabIndex = 52;
+            this.ClassName_Input_string_1.TextChanged += new System.EventHandler(this.ClassName_Input_string_1_TextChanged);
+            // 
+            // ClassStudents_dataGridView
+            // 
+            this.ClassStudents_dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.ClassStudents_dataGridView.Location = new System.Drawing.Point(53, 64);
+            this.ClassStudents_dataGridView.Name = "ClassStudents_dataGridView";
+            this.ClassStudents_dataGridView.Size = new System.Drawing.Size(244, 287);
+            this.ClassStudents_dataGridView.TabIndex = 53;
             // 
             // ClassesForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(917, 596);
+            this.Controls.Add(this.ClassStudents_dataGridView);
             this.Controls.Add(this.ClassName_Input_string_1);
             this.Controls.Add(this.CLassName_Lable);
             this.Name = "ClassesForm";
@@ -93,6 +105,8 @@ namespace IdanLalezari326643269.FORMS
             this.Controls.SetChildIndex(this.Search_BTN, 0);
             this.Controls.SetChildIndex(this.CLassName_Lable, 0);
             this.Controls.SetChildIndex(this.ClassName_Input_string_1, 0);
+            this.Controls.SetChildIndex(this.ClassStudents_dataGridView, 0);
+            ((System.ComponentModel.ISupportInitialize)(this.ClassStudents_dataGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -102,5 +116,6 @@ namespace IdanLalezari326643269.FORMS
 
         private System.Windows.Forms.Label CLassName_Lable;
         private System.Windows.Forms.TextBox ClassName_Input_string_1;
+        private System.Windows.Forms.DataGridView ClassStudents_dataGridView;
     }
 }

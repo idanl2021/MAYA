@@ -31,9 +31,9 @@ namespace IdanLalezari326643269.FORMS
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DataForm));
             this.AddRecord_BTN = new System.Windows.Forms.Button();
-            //this.AddRecord_BTN = new MetroButton();
             this.dataGridView = new System.Windows.Forms.DataGridView();
             this.Title = new System.Windows.Forms.Label();
             this.First_BTN = new System.Windows.Forms.Button();
@@ -47,25 +47,28 @@ namespace IdanLalezari326643269.FORMS
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.Search_BTN = new System.Windows.Forms.Button();
+            this.toolTip = new System.Windows.Forms.ToolTip(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // AddRecord_BTN
             // 
-            this.AddRecord_BTN.Location = new System.Drawing.Point(176, 9);
+            this.AddRecord_BTN.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.AddRecord_BTN.Image = ((System.Drawing.Image)(resources.GetObject("AddRecord_BTN.Image")));
+            this.AddRecord_BTN.Location = new System.Drawing.Point(176, 6);
             this.AddRecord_BTN.Name = "AddRecord_BTN";
-            this.AddRecord_BTN.Size = new System.Drawing.Size(62, 53);
+            this.AddRecord_BTN.Size = new System.Drawing.Size(35, 36);
             this.AddRecord_BTN.TabIndex = 40;
-            this.AddRecord_BTN.Text = "Add";
+            this.toolTip.SetToolTip(this.AddRecord_BTN, "Add");
             this.AddRecord_BTN.UseVisualStyleBackColor = true;
             this.AddRecord_BTN.Click += new System.EventHandler(this.AddRecord_BTN_Click);
             // 
             // dataGridView
             // 
             this.dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView.Location = new System.Drawing.Point(135, 357);
+            this.dataGridView.Location = new System.Drawing.Point(53, 357);
             this.dataGridView.Name = "dataGridView";
-            this.dataGridView.Size = new System.Drawing.Size(765, 219);
+            this.dataGridView.Size = new System.Drawing.Size(847, 219);
             this.dataGridView.TabIndex = 38;
             this.dataGridView.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView_RowHeaderMouseClick);
             // 
@@ -87,6 +90,7 @@ namespace IdanLalezari326643269.FORMS
             this.First_BTN.Name = "First_BTN";
             this.First_BTN.Size = new System.Drawing.Size(35, 35);
             this.First_BTN.TabIndex = 41;
+            this.toolTip.SetToolTip(this.First_BTN, "First");
             this.First_BTN.UseVisualStyleBackColor = false;
             this.First_BTN.Click += new System.EventHandler(this.First_BTN_Click);
             // 
@@ -97,6 +101,7 @@ namespace IdanLalezari326643269.FORMS
             this.Back_BTN.Name = "Back_BTN";
             this.Back_BTN.Size = new System.Drawing.Size(35, 35);
             this.Back_BTN.TabIndex = 42;
+            this.toolTip.SetToolTip(this.Back_BTN, "Back");
             this.Back_BTN.UseVisualStyleBackColor = true;
             this.Back_BTN.Click += new System.EventHandler(this.Back_BTN_Click);
             // 
@@ -107,6 +112,7 @@ namespace IdanLalezari326643269.FORMS
             this.Next_BTN.Name = "Next_BTN";
             this.Next_BTN.Size = new System.Drawing.Size(35, 35);
             this.Next_BTN.TabIndex = 43;
+            this.toolTip.SetToolTip(this.Next_BTN, "Next");
             this.Next_BTN.UseVisualStyleBackColor = true;
             this.Next_BTN.Click += new System.EventHandler(this.Next_BTN_Click);
             // 
@@ -117,75 +123,85 @@ namespace IdanLalezari326643269.FORMS
             this.Last_BTN.Name = "Last_BTN";
             this.Last_BTN.Size = new System.Drawing.Size(35, 35);
             this.Last_BTN.TabIndex = 44;
+            this.toolTip.SetToolTip(this.Last_BTN, "Last");
             this.Last_BTN.UseVisualStyleBackColor = true;
             this.Last_BTN.Click += new System.EventHandler(this.Last_BTN_Click);
             // 
             // Update_BTN
             // 
-            this.Update_BTN.Location = new System.Drawing.Point(244, 9);
+            this.Update_BTN.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.Update_BTN.Image = ((System.Drawing.Image)(resources.GetObject("Update_BTN.Image")));
+            this.Update_BTN.Location = new System.Drawing.Point(217, 6);
             this.Update_BTN.Name = "Update_BTN";
-            this.Update_BTN.Size = new System.Drawing.Size(62, 53);
+            this.Update_BTN.Size = new System.Drawing.Size(39, 35);
             this.Update_BTN.TabIndex = 45;
-            this.Update_BTN.Text = "Update";
+            this.toolTip.SetToolTip(this.Update_BTN, "Update");
             this.Update_BTN.UseVisualStyleBackColor = true;
             this.Update_BTN.Click += new System.EventHandler(this.Update_BTN_Click);
             // 
             // Clear_BTN
             // 
-            this.Clear_BTN.Location = new System.Drawing.Point(312, 9);
+            this.Clear_BTN.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("Clear_BTN.BackgroundImage")));
+            this.Clear_BTN.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.Clear_BTN.Location = new System.Drawing.Point(262, 6);
             this.Clear_BTN.Name = "Clear_BTN";
-            this.Clear_BTN.Size = new System.Drawing.Size(62, 53);
+            this.Clear_BTN.Size = new System.Drawing.Size(35, 33);
             this.Clear_BTN.TabIndex = 39;
-            this.Clear_BTN.Text = "Clear";
+            this.toolTip.SetToolTip(this.Clear_BTN, "Clear");
             this.Clear_BTN.UseVisualStyleBackColor = true;
             this.Clear_BTN.Click += new System.EventHandler(this.Clear_BTN_Click);
             // 
             // Cancel_BTN
             // 
             this.Cancel_BTN.Enabled = false;
-            this.Cancel_BTN.Location = new System.Drawing.Point(380, 9);
+            this.Cancel_BTN.Image = ((System.Drawing.Image)(resources.GetObject("Cancel_BTN.Image")));
+            this.Cancel_BTN.Location = new System.Drawing.Point(303, 6);
             this.Cancel_BTN.Name = "Cancel_BTN";
-            this.Cancel_BTN.Size = new System.Drawing.Size(62, 53);
+            this.Cancel_BTN.Size = new System.Drawing.Size(35, 33);
             this.Cancel_BTN.TabIndex = 46;
-            this.Cancel_BTN.Text = "Cancel";
+            this.toolTip.SetToolTip(this.Cancel_BTN, "Cancel");
             this.Cancel_BTN.UseVisualStyleBackColor = true;
             this.Cancel_BTN.Click += new System.EventHandler(this.Cancel_BTN_Click);
             // 
             // Save_BTN
             // 
             this.Save_BTN.Enabled = false;
-            this.Save_BTN.Location = new System.Drawing.Point(448, 9);
+            this.Save_BTN.Image = ((System.Drawing.Image)(resources.GetObject("Save_BTN.Image")));
+            this.Save_BTN.Location = new System.Drawing.Point(344, 6);
             this.Save_BTN.Name = "Save_BTN";
-            this.Save_BTN.Size = new System.Drawing.Size(62, 53);
+            this.Save_BTN.Size = new System.Drawing.Size(35, 34);
             this.Save_BTN.TabIndex = 47;
-            this.Save_BTN.Text = "Save";
+            this.toolTip.SetToolTip(this.Save_BTN, "Save");
             this.Save_BTN.UseVisualStyleBackColor = true;
             this.Save_BTN.Click += new System.EventHandler(this.Save_BTN_Click);
             // 
             // comboBox1
             // 
+            this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(802, 65);
+            this.comboBox1.Location = new System.Drawing.Point(802, 64);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(98, 21);
             this.comboBox1.TabIndex = 48;
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(667, 65);
+            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.textBox1.Location = new System.Drawing.Point(667, 63);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(129, 20);
+            this.textBox1.Size = new System.Drawing.Size(129, 22);
             this.textBox1.TabIndex = 49;
             this.textBox1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox1_KeyDown);
             this.textBox1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
             // 
             // Search_BTN
             // 
-            this.Search_BTN.Location = new System.Drawing.Point(607, 63);
+            this.Search_BTN.Image = ((System.Drawing.Image)(resources.GetObject("Search_BTN.Image")));
+            this.Search_BTN.Location = new System.Drawing.Point(632, 59);
             this.Search_BTN.Name = "Search_BTN";
-            this.Search_BTN.Size = new System.Drawing.Size(54, 23);
+            this.Search_BTN.Size = new System.Drawing.Size(29, 29);
             this.Search_BTN.TabIndex = 50;
-            this.Search_BTN.Text = "search";
+            this.toolTip.SetToolTip(this.Search_BTN, "Search");
             this.Search_BTN.UseVisualStyleBackColor = true;
             this.Search_BTN.Click += new System.EventHandler(this.Search_BTN_Click_1);
             // 
@@ -212,6 +228,7 @@ namespace IdanLalezari326643269.FORMS
             this.Name = "DataForm";
             this.Text = "DataForm";
             this.Load += new System.EventHandler(this.DataForm_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.DataForm_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -235,5 +252,6 @@ namespace IdanLalezari326643269.FORMS
         protected System.Windows.Forms.ComboBox comboBox1;
         protected System.Windows.Forms.TextBox textBox1;
         protected System.Windows.Forms.Button Search_BTN;
+        private System.Windows.Forms.ToolTip toolTip;
     }
 }

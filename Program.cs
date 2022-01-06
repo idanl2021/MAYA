@@ -1,4 +1,5 @@
-﻿using System;
+﻿using IdanLalezari326643269.FORMS;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -16,7 +17,7 @@ namespace IdanLalezari326643269
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new StartForm());
+            Application.Run(new LoginForm());
         }
     }
 }

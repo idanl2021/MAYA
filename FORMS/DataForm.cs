@@ -477,6 +477,24 @@ namespace IdanLalezari326643269.FORMS
             return str;
         }
 
-
+        private void DataForm_KeyDown(object sender, KeyEventArgs e)
+        {
+            // error!
+            try
+            {
+                if (e.KeyCode == Keys.Right)
+                {
+                    Next_BTN_Click(sender, (EventArgs)e);
+                }
+                if (e.KeyCode == Keys.Left)
+                {
+                    Back_BTN_Click(sender, (EventArgs)e);
+                }
+            }
+            catch (Exception ex)
+            {
+                LOGGER.Logger.PrintLog("error in DataForm_KeyDown() func: " + ex.Message, Enums.LogType.Error);
+            }
+        }
     }
 }

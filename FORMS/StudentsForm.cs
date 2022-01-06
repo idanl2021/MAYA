@@ -31,7 +31,8 @@ namespace IdanLalezari326643269.FORMS
 
         private void StudentsForm_Load(object sender, EventArgs e)
         {
-            Table = DATA.DAL.OpenTable("Students");
+            //Table = NETWORK.DatabaseServer.OpenTable_SelectAllFrom("Students");
+            Table = NETWORK.DatabaseServer.OpenTable_SelectAllFrom("Students");
             UTILITIES.DisplayUtilities.FillDataGrid(dataGridView, Table);
             count = 0;
             key = StudentID_Input_string_1;

@@ -28,5 +28,16 @@ namespace IdanLalezari326643269.ENUM
             Normal,
             Error
         }
+
+        [Serializable]
+        public enum MsgCode
+        {
+            Nothing,
+            OpenTableSelectAllFrom,
+            SendSQLquery,
+            IsUser,
+            Login
+        }
+
     }
 }
