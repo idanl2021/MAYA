@@ -23,26 +23,14 @@ namespace IdanLalezari326643269.UTILITIES
             {
                 if(control is Form)
                 {
-                    //panel.Controls.Remove(control);
+                    if (control is T) {
+                        (control as Form).Show();
+                        return;
+                    }
                     (control as Form).Hide();
                 }
             }
-            foreach (Control control in panel.Controls)
-            {
-                if (control is T)
-                {
-                    //panel.Controls.Remove(control);
-                    (control as Form).Show();
-                    return;
-                }
-            }
-
-
-            //var frm = new StudentsForm() { TopLevel = false, TopMost = true };
-            ////frm.FormBorderStyle = (FormBorderStyle)cboFormStyle.SelectedIndex;
-            //frm.FormBorderStyle = FormBorderStyle.None;
-            //this.mainPanel.Controls.Add(frm);
-            //frm.Show();
+            
             T frm = Activator.CreateInstance<T>();
             frm.TopLevel = false;
             frm.TopMost = true;
