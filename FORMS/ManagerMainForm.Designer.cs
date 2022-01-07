@@ -31,10 +31,12 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.NavBarPanel = new System.Windows.Forms.Panel();
             this.mainPanel = new System.Windows.Forms.Panel();
+            this.CloseBTN = new System.Windows.Forms.Button();
             this.ToClasses_NavButton = new IdanLalezari326643269.CONTROLS.NavButton();
             this.ToTeachers_NavButton = new IdanLalezari326643269.CONTROLS.NavButton();
             this.ToStudents_NavButton = new IdanLalezari326643269.CONTROLS.NavButton();
             this.panel1.SuspendLayout();
+            this.NavBarPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -52,9 +54,10 @@
             // NavBarPanel
             // 
             this.NavBarPanel.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.NavBarPanel.Controls.Add(this.CloseBTN);
             this.NavBarPanel.Location = new System.Drawing.Point(-1, 1);
             this.NavBarPanel.Name = "NavBarPanel";
-            this.NavBarPanel.Size = new System.Drawing.Size(1174, 56);
+            this.NavBarPanel.Size = new System.Drawing.Size(1176, 56);
             this.NavBarPanel.TabIndex = 1;
             // 
             // mainPanel
@@ -64,6 +67,16 @@
             this.mainPanel.Name = "mainPanel";
             this.mainPanel.Size = new System.Drawing.Size(967, 634);
             this.mainPanel.TabIndex = 2;
+            // 
+            // CloseBTN
+            // 
+            this.CloseBTN.Location = new System.Drawing.Point(3, 3);
+            this.CloseBTN.Name = "CloseBTN";
+            this.CloseBTN.Size = new System.Drawing.Size(45, 42);
+            this.CloseBTN.TabIndex = 0;
+            this.CloseBTN.Text = "close";
+            this.CloseBTN.UseVisualStyleBackColor = true;
+            this.CloseBTN.Click += new System.EventHandler(this.CloseBTN_Click);
             // 
             // ToClasses_NavButton
             // 
@@ -107,10 +120,12 @@
             this.Controls.Add(this.NavBarPanel);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "ManagerMainForm";
             this.Text = "ManagerMainForm";
             this.Load += new System.EventHandler(this.ManagerMainForm_Load);
             this.panel1.ResumeLayout(false);
+            this.NavBarPanel.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -123,5 +138,6 @@
         private CONTROLS.NavButton ToTeachers_NavButton;
         private System.Windows.Forms.Panel mainPanel;
         private CONTROLS.NavButton ToClasses_NavButton;
+        private System.Windows.Forms.Button CloseBTN;
     }
 }

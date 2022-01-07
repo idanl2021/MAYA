@@ -62,5 +62,10 @@ namespace IdanLalezari326643269.FORMS
         {
             UTILITIES.FormUtilities.AddFormToPanel<ClassesForm>(mainPanel);
         }
+
+        private void CloseBTN_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

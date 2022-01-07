@@ -89,7 +89,7 @@ namespace IdanLalezari326643269.FORMS
         private void LogInButton()
         {
             Form frm = null;
-            DataTable dt = DAL.OpenTable("SELECT * FORM Users WHERE ID = '" + ID_textbox.Text + "' AND Password = '" + Password_textbox.Text + "'");
+            DataTable dt = DAL.OpenTable("Users WHERE ID = '" + ID_textbox.Text + "' AND Password = '" + Password_textbox.Text + "'");
             List<DataRow> list = dt.AsEnumerable().ToList();
             if (list.Count != 1) throw new Exception("Wrong size of rows");
             string group = list[0]["Group"].ToString();
