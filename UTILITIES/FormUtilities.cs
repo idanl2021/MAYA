@@ -16,7 +16,7 @@ namespace IdanLalezari326643269.UTILITIES
         /// </summary>
         /// <typeparam name="T">Form type</typeparam>
         /// <param name="panel"></param>
-        public static void AddFormToPanel<T>(Panel panel) where T : Form
+        public static T AddFormToPanel<T>(Panel panel) where T : Form
         {
             // remove forms from panel
             foreach (Control control in panel.Controls)
@@ -24,8 +24,12 @@ namespace IdanLalezari326643269.UTILITIES
                 if(control is Form)
                 {
                     if (control is T) {
-                        (control as Form).Show();
-                        return;
+                        (control as T).Show();
+                        if (control is DataForm)
+                        {
+                            (control as DataForm).panel = panel;
+                        }
+                        return (control as T);
                     }
                     (control as Form).Hide();
                 }
@@ -36,7 +40,12 @@ namespace IdanLalezari326643269.UTILITIES
             frm.TopMost = true;
             frm.FormBorderStyle = FormBorderStyle.None;
             panel.Controls.Add(frm);
+            if(frm is DataForm)
+            {
+                (frm as DataForm).panel = panel;
+            }
             frm.Show();
+            return frm;
         }
 
         public class Placeholder

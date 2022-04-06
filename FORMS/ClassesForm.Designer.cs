@@ -32,6 +32,7 @@ namespace IdanLalezari326643269.FORMS
             this.CLassName_Lable = new System.Windows.Forms.Label();
             this.ClassName_Input_string_1 = new System.Windows.Forms.TextBox();
             this.ClassStudents_dataGridView = new System.Windows.Forms.DataGridView();
+            this.toStudentsWithShared_BTN = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.ClassStudents_dataGridView)).BeginInit();
             this.SuspendLayout();
             // 
@@ -43,7 +44,7 @@ namespace IdanLalezari326643269.FORMS
             // 
             // comboBox1
             // 
-            this.comboBox1.Location = new System.Drawing.Point(898, 65);
+            this.comboBox1.Location = new System.Drawing.Point(971, 67);
             this.comboBox1.Visible = false;
             // 
             // textBox1
@@ -78,12 +79,25 @@ namespace IdanLalezari326643269.FORMS
             this.ClassStudents_dataGridView.Name = "ClassStudents_dataGridView";
             this.ClassStudents_dataGridView.Size = new System.Drawing.Size(244, 287);
             this.ClassStudents_dataGridView.TabIndex = 53;
+            this.ClassStudents_dataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ClassStudents_dataGridView_CellContentClick);
+            this.ClassStudents_dataGridView.RowHeaderMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.ClassStudents_dataGridView_RowHeaderMouseDoubleClick);
+            // 
+            // toStudentsWithShared_BTN
+            // 
+            this.toStudentsWithShared_BTN.Location = new System.Drawing.Point(304, 64);
+            this.toStudentsWithShared_BTN.Name = "toStudentsWithShared_BTN";
+            this.toStudentsWithShared_BTN.Size = new System.Drawing.Size(75, 23);
+            this.toStudentsWithShared_BTN.TabIndex = 54;
+            this.toStudentsWithShared_BTN.Text = "לתלמידים";
+            this.toStudentsWithShared_BTN.UseVisualStyleBackColor = true;
+            this.toStudentsWithShared_BTN.Click += new System.EventHandler(this.toStudentsWithShared_BTN_Click);
             // 
             // ClassesForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(917, 596);
+            this.ClientSize = new System.Drawing.Size(1000, 596);
+            this.Controls.Add(this.toStudentsWithShared_BTN);
             this.Controls.Add(this.ClassStudents_dataGridView);
             this.Controls.Add(this.ClassName_Input_string_1);
             this.Controls.Add(this.CLassName_Lable);
@@ -106,6 +120,7 @@ namespace IdanLalezari326643269.FORMS
             this.Controls.SetChildIndex(this.CLassName_Lable, 0);
             this.Controls.SetChildIndex(this.ClassName_Input_string_1, 0);
             this.Controls.SetChildIndex(this.ClassStudents_dataGridView, 0);
+            this.Controls.SetChildIndex(this.toStudentsWithShared_BTN, 0);
             ((System.ComponentModel.ISupportInitialize)(this.ClassStudents_dataGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -117,5 +132,6 @@ namespace IdanLalezari326643269.FORMS
         private System.Windows.Forms.Label CLassName_Lable;
         private System.Windows.Forms.TextBox ClassName_Input_string_1;
         private System.Windows.Forms.DataGridView ClassStudents_dataGridView;
+        private System.Windows.Forms.Button toStudentsWithShared_BTN;
     }
 }

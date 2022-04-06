@@ -99,5 +99,11 @@ namespace IdanLalezari326643269
             key = TeacherID_Input_string_1;
             DisplayRecords(0);
         }
+
+        private void AddRecord_BTN_Click_1(object sender, EventArgs e)
+        {
+            toAddUser = true;
+          
+        }
     }
 }

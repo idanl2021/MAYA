@@ -39,5 +39,12 @@ namespace IdanLalezari326643269.ENUM
             Login
         }
 
+        public enum UserGroup
+        {
+            Principal,
+            Teacher, 
+            Student
+        }
+
     }
 }

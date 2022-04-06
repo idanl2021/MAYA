@@ -117,7 +117,14 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <metadata name="timer_HourLBL.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
-  </metadata>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="button1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAM9JREFUSEvt
+        lEsKwjAQhrNwqVdQz2C3gtfTA3gEH5eqgugdFBf6f0MHXBjotGZT/OAnzCMzSZo0/enDUtpJF+nVjNj4
+        ezGSthJFcyJOXie8+FPaSAtp3IzY+L1JGLbvxVc4voDfm4SPay8xcW1WHuLkkR/iKjGxMisPcfLID3GX
+        mDgxKw9x8h5mBYju4GZWgOg3OJoVoPgtgrbvILx6p81LpjjjWZpLnWD7n/8iLsBB8mOhOP6TNMPxa1g5
+        xYs2oeiwmtTSFEcJaFKs+GBJ6Q2+jVWtHQNDqQAAAABJRU5ErkJggg==
+</value>
+  </data>
 </root>

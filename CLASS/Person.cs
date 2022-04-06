@@ -9,27 +9,38 @@ namespace IdanLalezari326643269.CLASS
 {
     class Person
     {
-        private string studentID;
+        private string ID;
         private string firstName;
         private string lastName;
         private string address;
         //private string adress;
         private string city;
-        private DateTime birthDate;
+        private string birthDate;
         private string phoneNumber;
 
-        public string StudentID
+        public Person(string ID, string firstName, string lastName, string address, string city, string birthDate, string phoneNumber)
+        {
+            this.ID = ID;
+            this.firstName = firstName;
+            this.lastName = lastName;
+            this.address = address;
+            this.city = city;
+            this.birthDate = birthDate;
+            this.phoneNumber = phoneNumber;
+        }
+
+        public string PersonID
         {
             set
             {
                 if (ValidationsUtilities.IsLegalId(value))
-                    this.studentID = value;
+                    this.ID = value;
                 else
                     throw new Exception("תעודת זהות לא חוקית");
             }
             get
             {
-                return this.studentID;
+                return this.ID;
             }
         }
         public string FirstName
@@ -65,16 +76,16 @@ namespace IdanLalezari326643269.CLASS
         public string Address { set => address = value; get => address; } // auto property
         public string City { set => city = value; get => city; }
 
-        public DateTime BirthDate
+        public string BirthDate
         {
             set
             {
-                if (value.Year >= 1900 && value.Year <= DateTime.Now.Year)
-                {
-                    this.birthDate = value;
-                }
-                else
-                    throw new Exception("תאריך לא חוקי");
+                //if (value.Year >= 1900 && value.Year <= DateTime.Now.Year)
+                //{
+                //    this.birthDate = value;
+                //}
+                //else
+                //    throw new Exception("תאריך לא חוקי");
             }
             get
             {

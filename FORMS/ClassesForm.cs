@@ -61,7 +61,7 @@ namespace IdanLalezari326643269.FORMS
         protected void DisplayRecords(int currentRow)
         {
             base.DisplayRecords(currentRow);
-            Table = DATA.DAL.GetSqlTable("SELECT FirstName, LastName FROM Students WHERE ClassName = '" + ClassName_Input_string_1.Text + "'");
+            Table = DATA.DAL.GetSqlTable("SELECT StudentID ,FirstName, LastName FROM Students WHERE ClassName = '" + ClassName_Input_string_1.Text + "'");
             UTILITIES.DisplayUtilities.FillDataGrid(ClassStudents_dataGridView, Table);
         }
 
@@ -69,6 +69,32 @@ namespace IdanLalezari326643269.FORMS
         {
             Table = DATA.DAL.GetSqlTable("SELECT FirstName, LastName FROM Students WHERE ClassName = '" + ClassName_Input_string_1.Text + "'");
             UTILITIES.DisplayUtilities.FillDataGrid(ClassStudents_dataGridView, Table);
+        }
+
+        private void ClassStudents_dataGridView_RowHeaderMouseDoubleClick(object sender = null, DataGridViewCellMouseEventArgs e = null)
+        {
+            int ID_INDEX = 0;
+            string id = ClassStudents_dataGridView.SelectedRows[0].Cells[ID_INDEX].Value.ToString();
+            DataTable t = DAL.GetSqlTable("SELECT * FROM Students Where StudentID = '" + id + "'");
+            DataRow dr = t.AsEnumerable().ToList()[0];
+            Student student = new Student(dr["StudentID"].ToString(), dr["FirstName"].ToString(), dr["LastName"].ToString(), dr["Address"].ToString(), dr["City"].ToString(), dr["BirthDate"].ToString(), dr["PhoneNumber"].ToString(), dr["ClassName"].ToString());
+
+            SharedObject.ChangeObj(student, "Student");
+            if (this.panel != null)
+            {
+                StudentsForm frm = UTILITIES.FormUtilities.AddFormToPanel<StudentsForm>(this.panel);
+                frm.DisplayFromShared();
+            }
+        }
+
+        private void toStudentsWithShared_BTN_Click(object sender, EventArgs e)
+        {
+            ClassStudents_dataGridView_RowHeaderMouseDoubleClick(sender);      
+        }
+
+        private void ClassStudents_dataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

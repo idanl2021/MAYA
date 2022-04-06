@@ -5,6 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data;
 using IdanLalezari326643269.DATA;
+using System.Windows.Forms;
+
 namespace IdanLalezari326643269.UTILITIES
 {
     public abstract class GeneralUtilities
@@ -105,5 +107,68 @@ namespace IdanLalezari326643269.UTILITIES
         return s;
         }
 
+        public static string GetGreetingText()
+        {
+            int hour = DateTime.Now.Hour;
+            string greeting = "";
+            if(hour >= 5 && hour < 12)
+            {
+                greeting = "בוקר טוב";
+            }
+            else if(hour >= 12 && hour < 18)
+            {
+                greeting = "צהריים טובים";
+            }
+            else if(hour >= 18 && hour < 21)
+            {
+                greeting = "ערב טוב";
+            }
+            else if(hour >= 21 && hour < 5)
+            {
+                greeting = "לילה טוב";
+            }
+            return greeting;
+        }
+
+        /// <summary>
+        /// get the hour time in [hh:mm] format
+        /// </summary>
+        /// <returns>string</returns>
+        public static string GetHourString()
+        {
+            string hour = DateTime.Now.Hour.ToString();
+            string min = DateTime.Now.Minute.ToString();
+            if (hour.Length < 2) hour = $"0{hour}";
+            if (min.Length < 2) min = $"0{min}";
+            return $"{hour}:{min}";
+        }
+
+        public static string GetLTRMark()
+        {
+            return "\u200E";
+        }
+
+        public static void addUser(string id, string userGroup)
+        {
+            string group = userGroup;
+            DataTable Table = DAL.OpenTable("Users");
+            //switch (userGroup)
+            //{
+            //    case ENUM.Enums.UserGroup.Principal:
+            //        group = "Principal";
+            //        break;
+            //    case ENUM.Enums.UserGroup.Teacher:
+            //        group = "Teacher";
+            //        break;
+            //    case ENUM.Enums.UserGroup.Student:
+            //        group = "Student";
+            //        break;
+            //    default:
+            //        break;
+            //}
+            string strSQL = $"INSERT INTO Users (ID,Password,Group,Gender) VALUES ('{id}','{id}','{group}','N')";
+            LOGGER.Logger.PrintLog(strSQL);
+            MessageBox.Show(GeneralUtilities.AddRecd(Table, strSQL));
+        }
     }
 }

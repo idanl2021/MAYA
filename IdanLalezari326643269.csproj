@@ -78,6 +78,7 @@
     <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>packages\System.ValueTuple.4.5.0\lib\net47\System.ValueTuple.dll</HintPath>
     </Reference>
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -95,7 +96,8 @@
     <Compile Include="CLASS\Lesson.cs" />
     <Compile Include="CLASS\Person.cs" />
     <Compile Include="CLASS\School.cs" />
-    <Compile Include="CLASS\Students.cs" />
+    <Compile Include="CLASS\SharedObject.cs" />
+    <Compile Include="CLASS\Student.cs" />
     <Compile Include="CLASS\Teachers.cs" />
     <Compile Include="CLASS\User.cs" />
     <Compile Include="CONTROLS\LogInTextBox.cs">
@@ -130,12 +132,30 @@
     <Compile Include="FORMS\DataForm.Designer.cs">
       <DependentUpon>DataForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="FORMS\Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORMS\Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
     <Compile Include="FORMS\IDataForm.cs" />
+    <Compile Include="FORMS\LessonForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORMS\LessonForm.Designer.cs">
+      <DependentUpon>LessonForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="FORMS\LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FORMS\LoginForm.Designer.cs">
       <DependentUpon>LoginForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FORMS\MainFrom-ManagerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORMS\MainFrom-ManagerForm.Designer.cs">
+      <DependentUpon>MainFrom-ManagerForm.cs</DependentUpon>
     </Compile>
     <Compile Include="FORMS\ManagerMainForm.cs">
       <SubType>Form</SubType>
@@ -154,6 +174,17 @@
     </Compile>
     <Compile Include="FORMS\StudentsForm.Designer.cs">
       <DependentUpon>StudentsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FORMS\TeacherMainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORMS\TeacherMainForm.Designer.cs">
+      <DependentUpon>TeacherMainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="IdanLalezari326643269DataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>IdanLalezari326643269DataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="LOGGER\Logger.cs" />
     <Compile Include="NETWORK\COM.cs" />
@@ -187,8 +218,17 @@
     <EmbeddedResource Include="FORMS\DataForm.resx">
       <DependentUpon>DataForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FORMS\Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORMS\LessonForm.resx">
+      <DependentUpon>LessonForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FORMS\LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORMS\MainFrom-ManagerForm.resx">
+      <DependentUpon>MainFrom-ManagerForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FORMS\ManagerMainForm.resx">
       <DependentUpon>ManagerMainForm.cs</DependentUpon>
@@ -198,6 +238,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FORMS\StudentsForm.resx">
       <DependentUpon>StudentsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORMS\TeacherMainForm.resx">
+      <DependentUpon>TeacherMainForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -212,6 +255,17 @@
     <EmbeddedResource Include="FORMS\TeachersForm.resx">
       <DependentUpon>TeachersForm.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="IdanLalezari326643269DataSet.xsc">
+      <DependentUpon>IdanLalezari326643269DataSet.xsd</DependentUpon>
+    </None>
+    <None Include="IdanLalezari326643269DataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>IdanLalezari326643269DataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="IdanLalezari326643269DataSet.xss">
+      <DependentUpon>IdanLalezari326643269DataSet.xsd</DependentUpon>
+    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

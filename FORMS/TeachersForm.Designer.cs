@@ -45,6 +45,10 @@ namespace IdanLalezari326643269
             this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
+            // AddRecord_BTN
+            // 
+            this.AddRecord_BTN.Click += new System.EventHandler(this.AddRecord_BTN_Click_1);
+            // 
             // Title
             // 
             this.Title.Size = new System.Drawing.Size(63, 25);

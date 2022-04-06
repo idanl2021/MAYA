@@ -11,7 +11,7 @@ using System.Data.OleDb;
 namespace IdanLalezari326643269.DATA
 {
     class DAL
-    {
+    {   
         public static DataSet ds; //אוביקט לאיחזור נתונים 
         public static OleDbConnection objConn; // Connection אוביקט
         public static OleDbDataAdapter da;
@@ -21,7 +21,7 @@ namespace IdanLalezari326643269.DATA
 
             // בונה את מחרוזת הקישור
             // string strConn = "Provider=Microsoft.Jet.OLEDB.4.0;Data Source=6point.mdb";
-            string strConn = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=IdanLalezari326643269.accdb";
+            string strConn = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=F:\בית ספר\כיתה יב\מדמח\Project\IdanLalezari326643269\bin\Debug\IdanLalezari326643269.accdb";
             // מאתחל חיבור לבסיס הנתונים
             objConn = new OleDbConnection(strConn);
             // DataSet מאתחל אוביקט מסוג 

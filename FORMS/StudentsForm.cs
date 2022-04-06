@@ -32,6 +32,7 @@ namespace IdanLalezari326643269.FORMS
         private void StudentsForm_Load(object sender, EventArgs e)
         {
             //Table = NETWORK.DatabaseServer.OpenTable_SelectAllFrom("Students");
+            
             Table = NETWORK.DatabaseServer.OpenTable_SelectAllFrom("Students");
             UTILITIES.DisplayUtilities.FillDataGrid(dataGridView, Table);
             count = 0;
@@ -180,6 +181,111 @@ namespace IdanLalezari326643269.FORMS
         private void Update_BTN_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        public override void EditMode()
+        {
+            base.EditMode();
+            genderPanel.Enabled = true;
+        }
+
+        public override void ExitEditMode()
+        {
+            base.ExitEditMode();
+            genderPanel.Enabled = false;
+        }
+
+        private void Gender_Input_string_9_TextChanged(object sender, EventArgs e)
+        {
+            //switch (Gender_Input_string_9.Text)
+            //{
+            //    case "M":
+            //        Man_RadioBTN.Checked = true;
+            //        break;
+            //    case "W":
+            //        Woman_RadioBTN.Checked = true;
+            //        break;
+            //    case "N":
+            //        NoneGender_RadioBTN.Checked = true;
+            //        break;
+            //    default:
+            //        break;
+            //}
+
+            string gender = Gender_Input_string_9.Text;
+            if(gender.Length >= 2)
+            {
+                gender = gender.Remove(gender.Length - 1);
+            }
+            if(gender == "M")
+            {
+                Man_RadioBTN.Checked = true;
+            }
+            else if (gender == "W")
+            {
+                Woman_RadioBTN.Checked = true;
+            }
+            else if (gender == "N")
+            {
+                NoneGender_RadioBTN.Checked = true;
+            }
+            else
+            {
+                LOGGER.Logger.PrintLog($"gender is {gender}");
+            }
+            if(gender.Equals("L"))
+            {
+                LOGGER.Logger.PrintLog(gender);
+            }
+        }
+
+        private void Man_RadioBTN_Click(object sender, EventArgs e)
+        {
+            Gender_Input_string_9.Text = "M";
+        }
+
+        private void Woman_RadioBTN_Click(object sender, EventArgs e)
+        {
+            Gender_Input_string_9.Text = "W";
+        }
+
+        private void NoneGender_RadioBTN_Click(object sender, EventArgs e)
+        {
+            Gender_Input_string_9.Text = "N";
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Woman_RadioBTN.Checked = true;
+        }
+
+        public void DisplayFromShared()
+        {
+            if (SharedObject.typeOfObj == "Student")
+            {
+                Student student = SharedObject.obj as Student;
+                int rowIndex = -1;
+
+                DataGridViewRow row = dataGridView.Rows
+                    .Cast<DataGridViewRow>()
+                    .Where(r => r.Cells["StudentID"].Value.ToString().Equals(student.PersonID))
+                    .First();
+
+                rowIndex = row.Index;
+                if (rowIndex != -1)
+                {
+                    DisplayRecords(rowIndex);
+                }
+            }
+            else
+            {
+                DisplayRecords(0);
+            }
         }
     }
 }

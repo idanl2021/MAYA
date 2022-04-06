@@ -13,6 +13,7 @@ using IdanLalezari326643269;
 using IdanLalezari326643269.ENUM;
 using IdanLalezari326643269.UTILITIES;
 using IdanLalezari326643269.DATA;
+using IdanLalezari326643269.CLASS;
 
 namespace IdanLalezari326643269.FORMS
 {
@@ -42,6 +43,12 @@ namespace IdanLalezari326643269.FORMS
         protected Control key;
         protected Dictionary<Control, Enums.ControlType> controlTypeDict;
         bool toUpdate = false;
+        public 
+            bool toAddUser = false;
+
+        public Panel panel = null;
+
+        //public Type type = DataForm;
 
         public DataForm()
         {
@@ -52,7 +59,7 @@ namespace IdanLalezari326643269.FORMS
         protected void ClearInputControls()
         {
             var controls = GetInputControls();
-            foreach(Control c in controls)
+            foreach (Control c in controls)
             {
                 c.Text = "";
             }
@@ -149,8 +156,9 @@ namespace IdanLalezari326643269.FORMS
             }
         }
 
-        public virtual string Insert_sqlString() {
-            string str = @"INSERT INTO "+ tableName +"("+ GetSqlTableColumnsNames()+ ") VALUES (" + this.Insert_sqlString_ControlsArray() + ")";
+        public virtual string Insert_sqlString()
+        {
+            string str = @"INSERT INTO " + tableName + "(" + GetSqlTableColumnsNames() + ") VALUES (" + this.Insert_sqlString_ControlsArray() + ")";
             LOGGER.Logger.PrintLog(str);
             return str;
         }
@@ -173,7 +181,7 @@ namespace IdanLalezari326643269.FORMS
                 }
                 else if (dict[c] == (Enums.ControlType.@string))
                 {
-                    str += "'" + c.Text.Replace("'","''") + LTRMark + "',"; // replace ' with '' to prevent access sql problems
+                    str += "'" + c.Text.Replace("'", "''") + LTRMark + "',"; // replace ' with '' to prevent access sql problems
                 }
                 else
                     throw new Exception("control is not int/string/address");
@@ -240,7 +248,7 @@ namespace IdanLalezari326643269.FORMS
             {
                 strSql = "Select * " +
                         "from " + tableName + " " +
-                         "where " + tableKeyName + "='" + keyValue + "'";
+                         "where " + tableKeyName + "='" + key.Text + "'";
                 DAL.GetDataSet(strSql);
 
                 if (DAL.ds.Tables[0].Rows.Count > 0)
@@ -249,7 +257,7 @@ namespace IdanLalezari326643269.FORMS
                 }
                 else
                 {
-                    var controlscol = this.Controls;
+                    //var controlscol = this.Controls;
                     strSql = Insert_sqlString();
                     MessageBox.Show(GeneralUtilities.AddRecd(Table, strSql));
                     //StudentsForm();
@@ -281,16 +289,7 @@ namespace IdanLalezari326643269.FORMS
         protected void AddRecord_BTN_Click(object sender, EventArgs e)
         {
             this.ClearInputControls();
-            this.First_BTN.Enabled = false;
-            this.Last_BTN.Enabled = false;
-            this.Next_BTN.Enabled = false;
-            this.Back_BTN.Enabled = false;
-            this.AddRecord_BTN.Enabled = false;
-            this.Update_BTN.Enabled = false;
-            this.Clear_BTN.Enabled = false;
-            this.Save_BTN.Enabled = true;
-            this.Cancel_BTN.Enabled = true;
-            ChangeInputControlEnabled(true);
+            EditMode();
         }
 
         private void Search_BTN_Click_1(object sender, EventArgs e)
@@ -305,17 +304,7 @@ namespace IdanLalezari326643269.FORMS
 
         private void Cancel_BTN_Click(object sender, EventArgs e)
         {
-            this.First_BTN.Enabled = true;
-            this.Last_BTN.Enabled = true;
-            this.Next_BTN.Enabled = true;
-            this.Back_BTN.Enabled = true;
-            this.AddRecord_BTN.Enabled = true;
-            this.Update_BTN.Enabled = true;
-            this.Clear_BTN.Enabled = true;
-            this.Save_BTN.Enabled = false;
-            this.Cancel_BTN.Enabled = false;
-            DisplayRecords(IndexOfDataGridView);
-            ChangeInputControlEnabled(false);
+            ExitEditMode();
         }
 
         private void Save_BTN_Click(object sender, EventArgs e)
@@ -337,19 +326,14 @@ namespace IdanLalezari326643269.FORMS
                 }
                 else
                 {
-                    AddRecord(tableName, tableKeyName); 
+                    AddRecord(tableName, tableKeyName);
+                    if (toAddUser) {
+                        GeneralUtilities.addUser(key.Text, tableName);
+                        toAddUser = false;
+                    }
                 }
-                this.First_BTN.Enabled = true;
-                this.Last_BTN.Enabled = true;
-                this.Next_BTN.Enabled = true;
-                this.Back_BTN.Enabled = true;
-                this.AddRecord_BTN.Enabled = true;
-                this.Update_BTN.Enabled = true;
-                this.Clear_BTN.Enabled = true;
-                this.Save_BTN.Enabled = false;
-                this.Cancel_BTN.Enabled = false;
-                DisplayRecords(IndexOfDataGridView);
-                ChangeInputControlEnabled(false);
+                ExitEditMode();
+                //Console.WriteLine("hi");
             }
             else
             {
@@ -373,12 +357,12 @@ namespace IdanLalezari326643269.FORMS
 
         private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
         {
-            
+
         }
 
         private void textBox1_KeyDown(object sender, KeyEventArgs e)
         {
-            if(e.KeyCode == Keys.Enter)
+            if (e.KeyCode == Keys.Enter)
             {
                 Search();
             }
@@ -391,19 +375,10 @@ namespace IdanLalezari326643269.FORMS
 
         private void Update_BTN_Click(object sender, EventArgs e)
         {
-            this.First_BTN.Enabled = false;
-            this.Last_BTN.Enabled = false;
-            this.Next_BTN.Enabled = false;
-            this.Back_BTN.Enabled = false;
-            this.AddRecord_BTN.Enabled = false;
-            this.Update_BTN.Enabled = false;
-            this.Clear_BTN.Enabled = false;
-            this.Save_BTN.Enabled = true;
-            this.Cancel_BTN.Enabled = true;
-            ChangeInputControlEnabled(true);
+            EditMode();
             toUpdate = true;
             //UpdateRecord();
-            
+
         }
 
         public void UpdateRecord()
@@ -457,14 +432,14 @@ namespace IdanLalezari326643269.FORMS
                 /////str += stringArr[i] + "=" + (inputControls[i] as Control).Text + ",";
             }
             str = str.Remove(str.Length - 1);
-            str += "WHERE " + tableKeyName + "=" ;
+            str += " WHERE " + tableKeyName + "=";
             if (dict[key] == (Enums.ControlType.address))
             {
-                str +=  "#" + (key as DateTimePicker).Value.ToString("dd/MM/yyyy") + "#";
+                str += "#" + (key as DateTimePicker).Value.ToString("dd/MM/yyyy") + "#";
             }
             else if (dict[key] == (Enums.ControlType.@int))
             {
-                str +=  key.Text;
+                str += key.Text;
             }
             else if (dict[key] == (Enums.ControlType.@string))
             {
@@ -496,5 +471,63 @@ namespace IdanLalezari326643269.FORMS
                 LOGGER.Logger.PrintLog("error in DataForm_KeyDown() func: " + ex.Message, Enums.LogType.Error);
             }
         }
+
+        public virtual void EditMode()
+        {
+            this.First_BTN.Enabled = false;
+            this.Last_BTN.Enabled = false;
+            this.Next_BTN.Enabled = false;
+            this.Back_BTN.Enabled = false;
+            this.AddRecord_BTN.Enabled = false;
+            this.Update_BTN.Enabled = false;
+            this.Clear_BTN.Enabled = false;
+            this.Save_BTN.Enabled = true;
+            this.Cancel_BTN.Enabled = true;
+            ChangeInputControlEnabled(true);
+        }
+
+        public virtual void ExitEditMode()
+        {
+            this.First_BTN.Enabled = true;
+            this.Last_BTN.Enabled = true;
+            this.Next_BTN.Enabled = true;
+            this.Back_BTN.Enabled = true;
+            this.AddRecord_BTN.Enabled = true;
+            this.Update_BTN.Enabled = true;
+            this.Clear_BTN.Enabled = true;
+            this.Save_BTN.Enabled = false;
+            this.Cancel_BTN.Enabled = false;
+            DisplayRecords(IndexOfDataGridView);
+            ChangeInputControlEnabled(false);
+        }
+
+
+        //protected void Display<ClassType>(object obj)
+        //{
+        //    if (obj == null)
+        //    {
+        //        LOGGER.Logger.PrintLog("error in display func (DataForm) : form is null");
+        //        //throw new Exception("form is null in Display(DataForm)");
+        //        return;
+        //    }
+        //    if(obj is ClassType)
+        //    {
+        //        ClassType ent = (ClassType)obj;
+        //        int rowIndex = -1;
+
+        //        DataGridViewRow row = dataGridView.Rows
+        //            .Cast<DataGridViewRow>()
+        //            .Where(r => r.Cells["StudentID"].Value.ToString().Equals(ent.PersonID))
+        //            .First();
+
+        //        rowIndex = row.Index;
+        //        if (rowIndex != -1)
+        //        {
+        //            DisplayRecords(rowIndex);
+        //        }
+        //    }
+        //}
+        
+
     }
 }

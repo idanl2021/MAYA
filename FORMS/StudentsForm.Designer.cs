@@ -45,6 +45,13 @@ namespace IdanLalezari326643269.FORMS
             this.label7 = new System.Windows.Forms.Label();
             this.StudentID_Label = new System.Windows.Forms.Label();
             this.StudentID_Input_string_1 = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.genderPanel = new System.Windows.Forms.Panel();
+            this.NoneGender_RadioBTN = new System.Windows.Forms.RadioButton();
+            this.Woman_RadioBTN = new System.Windows.Forms.RadioButton();
+            this.Man_RadioBTN = new System.Windows.Forms.RadioButton();
+            this.Gender_Input_string_9 = new System.Windows.Forms.TextBox();
+            this.genderPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // AddRecord_BTN
@@ -217,11 +224,80 @@ namespace IdanLalezari326643269.FORMS
             this.StudentID_Input_string_1.TabIndex = 66;
             this.StudentID_Input_string_1.Leave += new System.EventHandler(this.LeaveKeyTextBox);
             // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(897, 265);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(33, 13);
+            this.label8.TabIndex = 67;
+            this.label8.Text = "מגדר";
+            // 
+            // genderPanel
+            // 
+            this.genderPanel.Controls.Add(this.NoneGender_RadioBTN);
+            this.genderPanel.Controls.Add(this.Woman_RadioBTN);
+            this.genderPanel.Controls.Add(this.Man_RadioBTN);
+            this.genderPanel.Enabled = false;
+            this.genderPanel.Location = new System.Drawing.Point(632, 259);
+            this.genderPanel.Name = "genderPanel";
+            this.genderPanel.Size = new System.Drawing.Size(259, 26);
+            this.genderPanel.TabIndex = 68;
+            this.genderPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            // 
+            // NoneGender_RadioBTN
+            // 
+            this.NoneGender_RadioBTN.AutoSize = true;
+            this.NoneGender_RadioBTN.Location = new System.Drawing.Point(3, 3);
+            this.NoneGender_RadioBTN.Name = "NoneGender_RadioBTN";
+            this.NoneGender_RadioBTN.Size = new System.Drawing.Size(121, 17);
+            this.NoneGender_RadioBTN.TabIndex = 2;
+            this.NoneGender_RadioBTN.TabStop = true;
+            this.NoneGender_RadioBTN.Text = "מעדיפ.ה לא להגיד";
+            this.NoneGender_RadioBTN.UseVisualStyleBackColor = true;
+            this.NoneGender_RadioBTN.Click += new System.EventHandler(this.NoneGender_RadioBTN_Click);
+            // 
+            // Woman_RadioBTN
+            // 
+            this.Woman_RadioBTN.AutoSize = true;
+            this.Woman_RadioBTN.Location = new System.Drawing.Point(136, 3);
+            this.Woman_RadioBTN.Name = "Woman_RadioBTN";
+            this.Woman_RadioBTN.Size = new System.Drawing.Size(54, 17);
+            this.Woman_RadioBTN.TabIndex = 1;
+            this.Woman_RadioBTN.TabStop = true;
+            this.Woman_RadioBTN.Text = "אישה";
+            this.Woman_RadioBTN.UseVisualStyleBackColor = true;
+            this.Woman_RadioBTN.Click += new System.EventHandler(this.Woman_RadioBTN_Click);
+            // 
+            // Man_RadioBTN
+            // 
+            this.Man_RadioBTN.AutoSize = true;
+            this.Man_RadioBTN.Location = new System.Drawing.Point(212, 3);
+            this.Man_RadioBTN.Name = "Man_RadioBTN";
+            this.Man_RadioBTN.Size = new System.Drawing.Size(44, 17);
+            this.Man_RadioBTN.TabIndex = 0;
+            this.Man_RadioBTN.TabStop = true;
+            this.Man_RadioBTN.Text = "גבר";
+            this.Man_RadioBTN.UseVisualStyleBackColor = true;
+            this.Man_RadioBTN.Click += new System.EventHandler(this.Man_RadioBTN_Click);
+            // 
+            // Gender_Input_string_9
+            // 
+            this.Gender_Input_string_9.Location = new System.Drawing.Point(526, 259);
+            this.Gender_Input_string_9.Name = "Gender_Input_string_9";
+            this.Gender_Input_string_9.Size = new System.Drawing.Size(100, 20);
+            this.Gender_Input_string_9.TabIndex = 69;
+            this.Gender_Input_string_9.Visible = false;
+            this.Gender_Input_string_9.TextChanged += new System.EventHandler(this.Gender_Input_string_9_TextChanged);
+            // 
             // StudentsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(942, 591);
+            this.Controls.Add(this.Gender_Input_string_9);
+            this.Controls.Add(this.genderPanel);
+            this.Controls.Add(this.label8);
             this.Controls.Add(this.StudentID_Input_string_1);
             this.Controls.Add(this.StudentID_Label);
             this.Controls.Add(this.PhoneNumber_Input_string_8);
@@ -241,19 +317,6 @@ namespace IdanLalezari326643269.FORMS
             this.Name = "StudentsForm";
             this.Text = "StudentsForm";
             this.Load += new System.EventHandler(this.StudentsForm_Load);
-            this.Controls.SetChildIndex(this.Title, 0);
-            this.Controls.SetChildIndex(this.Clear_BTN, 0);
-            this.Controls.SetChildIndex(this.AddRecord_BTN, 0);
-            this.Controls.SetChildIndex(this.First_BTN, 0);
-            this.Controls.SetChildIndex(this.Back_BTN, 0);
-            this.Controls.SetChildIndex(this.Next_BTN, 0);
-            this.Controls.SetChildIndex(this.Last_BTN, 0);
-            this.Controls.SetChildIndex(this.Update_BTN, 0);
-            this.Controls.SetChildIndex(this.Cancel_BTN, 0);
-            this.Controls.SetChildIndex(this.Save_BTN, 0);
-            this.Controls.SetChildIndex(this.comboBox1, 0);
-            this.Controls.SetChildIndex(this.textBox1, 0);
-            this.Controls.SetChildIndex(this.Search_BTN, 0);
             this.Controls.SetChildIndex(this.label1, 0);
             this.Controls.SetChildIndex(this.FirstName_Input_string_2, 0);
             this.Controls.SetChildIndex(this.label2, 0);
@@ -270,6 +333,24 @@ namespace IdanLalezari326643269.FORMS
             this.Controls.SetChildIndex(this.PhoneNumber_Input_string_8, 0);
             this.Controls.SetChildIndex(this.StudentID_Label, 0);
             this.Controls.SetChildIndex(this.StudentID_Input_string_1, 0);
+            this.Controls.SetChildIndex(this.label8, 0);
+            this.Controls.SetChildIndex(this.Title, 0);
+            this.Controls.SetChildIndex(this.Clear_BTN, 0);
+            this.Controls.SetChildIndex(this.AddRecord_BTN, 0);
+            this.Controls.SetChildIndex(this.First_BTN, 0);
+            this.Controls.SetChildIndex(this.Back_BTN, 0);
+            this.Controls.SetChildIndex(this.Next_BTN, 0);
+            this.Controls.SetChildIndex(this.Last_BTN, 0);
+            this.Controls.SetChildIndex(this.Update_BTN, 0);
+            this.Controls.SetChildIndex(this.Cancel_BTN, 0);
+            this.Controls.SetChildIndex(this.Save_BTN, 0);
+            this.Controls.SetChildIndex(this.comboBox1, 0);
+            this.Controls.SetChildIndex(this.textBox1, 0);
+            this.Controls.SetChildIndex(this.Search_BTN, 0);
+            this.Controls.SetChildIndex(this.genderPanel, 0);
+            this.Controls.SetChildIndex(this.Gender_Input_string_9, 0);
+            this.genderPanel.ResumeLayout(false);
+            this.genderPanel.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -293,6 +374,11 @@ namespace IdanLalezari326643269.FORMS
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label StudentID_Label;
-        
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Panel genderPanel;
+        private System.Windows.Forms.RadioButton NoneGender_RadioBTN;
+        private System.Windows.Forms.RadioButton Woman_RadioBTN;
+        private System.Windows.Forms.RadioButton Man_RadioBTN;
+        private System.Windows.Forms.TextBox Gender_Input_string_9;
     }
 }
