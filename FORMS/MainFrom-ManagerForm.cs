@@ -15,6 +15,7 @@ namespace IdanLalezari326643269.FORMS
     public partial class MainFrom_ManagerForm : Form
     {
         DataTable table;
+        int male, female;
 
         public MainFrom_ManagerForm()
         {
@@ -55,6 +56,29 @@ namespace IdanLalezari326643269.FORMS
             numOfClasses_LBL.Text = numOfClasses;
 
             DateLabel.Text = DateTime.Now.ToShortDateString();
+
+            male = int.Parse(numOfMaleStudents);
+            female = int.Parse(numOfFemaleStudents);
+
+            
+
         }
+
+        public void DisplayPieChart()
+        {
+            GenderChart.Series["s_gender"].Points.AddXY("male", male);
+            GenderChart.Series["s_gender"].Points.AddXY("female", female);
+        }
+
+
+        protected override void OnShown(EventArgs e)
+        {
+            base.OnShown(e);
+            DisplayPieChart();
+        }
+
+
+
+
     }
 }

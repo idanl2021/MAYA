@@ -141,6 +141,7 @@ namespace IdanLalezari326643269.FORMS
             this.ClassName_Input_string_4.Name = "ClassName_Input_string_4";
             this.ClassName_Input_string_4.Size = new System.Drawing.Size(100, 21);
             this.ClassName_Input_string_4.TabIndex = 56;
+            this.ClassName_Input_string_4.SelectedIndexChanged += new System.EventHandler(this.ClassName_Input_string_4_SelectedIndexChanged);
             // 
             // Address_Input_string_5
             // 

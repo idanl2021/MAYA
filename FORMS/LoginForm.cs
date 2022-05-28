@@ -92,13 +92,27 @@ namespace IdanLalezari326643269.FORMS
             DAL.OpenTable("Users WHERE ID = '" + ID_textbox.Text + "' AND Password = '" + Password_textbox.Text + "'");
             DataTable dt = DAL.ds.Tables[0];
             List<DataRow> list = dt.AsEnumerable().ToList();
-            if (list.Count != 1) throw new Exception("Wrong size of rows");
+            //if (list.Count != 1) throw new Exception("Wrong size of rows");
+            if (list.Count != 1)
+            {
+                LOGGER.Logger.PrintLog("Wrong size of rows", ENUM.Enums.LogType.Error);
+                return;
+            }
             string group = list[0]["Group"].ToString();
+            
 
             switch (group)
             {
                 case "Principal":
                     frm = new ManagerMainForm();
+                    break;
+                case "Teachers":
+                    frm = new TeacherMainForm();
+                    CLASS.SharedHashTable.dict["TeacherID"] = ID_textbox.Text;
+                    break;
+                case "Students":
+                    frm = new MainFormOfStudents();
+                    CLASS.SharedHashTable.dict["StudentID"] = ID_textbox.Text;
                     break;
                 default:
                     break;
@@ -135,8 +149,9 @@ namespace IdanLalezari326643269.FORMS
 
         private void LoginForm_Load(object sender, EventArgs e)
         {
-            ID_textbox.Text = "admin";
-            Password_textbox.Text = "admin";
+            //ID_textbox.Text = "admin";
+            //Password_textbox.Text = "admin";
+            ChangePasswordVisibility();
         }
 
         private void logInTextBox1_Load(object sender, EventArgs e)

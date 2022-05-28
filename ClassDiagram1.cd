@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="IdanLalezari326643269.CLASS.Person">
+    <Position X="2" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAAAAEAAAABAgAAIBAAASAQAAEIAAAACAAAACAAAAAg=</HashCode>
+      <FileName>CLASS\Person.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="IdanLalezari326643269.CLASS.Student">
+    <Position X="0.75" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>CLASS\Student.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="IdanLalezari326643269.CLASS.Assignment_Student">
+    <Position X="12.25" Y="2.25" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAAAAAAgAAAAIAAAAAAAAAAAAAAAAQAAAAECAAA=</HashCode>
+      <FileName>CLASS\Assignment-Student.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="IdanLalezari326643269.CLASS.Assignment">
+    <Position X="10.25" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAACAAAAgAAAAIAAAAAAAAAABBAAAAQEAAAABAAA=</HashCode>
+      <FileName>CLASS\Assignment.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="IdanLalezari326643269.CLASS.Class">
+    <Position X="5.5" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACACAAQAAAAEAAAAACAAAAAAAAAAAAIAAQAAAAEAAAA=</HashCode>
+      <FileName>CLASS\Class.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="IdanLalezari326643269.CLASS.Lesson">
+    <Position X="7.75" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAAIAAAAAACAAAAAgABAAAAAAAAAAAgAA=</HashCode>
+      <FileName>CLASS\Lesson.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="IdanLalezari326643269.CLASS.Teacher">
+    <Position X="3.5" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAA=</HashCode>
+      <FileName>CLASS\Teachers.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

@@ -166,7 +166,7 @@ namespace IdanLalezari326643269.UTILITIES
             //    default:
             //        break;
             //}
-            string strSQL = $"INSERT INTO Users (ID,Password,Group,Gender) VALUES ('{id}','{id}','{group}','N')";
+            string strSQL = $"INSERT INTO Users " /*(ID,Password,Group,Gender)*/ + $"VALUES ('{id}','{id}','{group}','N')";
             LOGGER.Logger.PrintLog(strSQL);
             MessageBox.Show(GeneralUtilities.AddRecd(Table, strSQL));
         }

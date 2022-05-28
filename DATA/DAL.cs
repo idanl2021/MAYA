@@ -21,7 +21,7 @@ namespace IdanLalezari326643269.DATA
 
             // בונה את מחרוזת הקישור
             // string strConn = "Provider=Microsoft.Jet.OLEDB.4.0;Data Source=6point.mdb";
-            string strConn = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=F:\בית ספר\כיתה יב\מדמח\Project\IdanLalezari326643269\bin\Debug\IdanLalezari326643269.accdb";
+            string strConn = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=IdanLalezari326643269.accdb";
             // מאתחל חיבור לבסיס הנתונים
             objConn = new OleDbConnection(strConn);
             // DataSet מאתחל אוביקט מסוג 
@@ -45,19 +45,52 @@ namespace IdanLalezari326643269.DATA
         {
             try
             {
-                GetDataSet("Select * from " + tableName);//פתיחת טבלה 
+                try
+                {
+                    GetDataSet("Select * from " + tableName);//פתיחת טבלה 
+                }
+                catch (Exception ex)
+                {
+                    LOGGER.Logger.PrintLog("error in OpenTable() func: " + ex.Message, ENUM.Enums.LogType.Error);
+                }
+                return (ds.Tables[0]);
             }
             catch (Exception ex)
             {
-                LOGGER.Logger.PrintLog("error in OpenTable() func: " + ex.Message, ENUM.Enums.LogType.Error);
+                LOGGER.Logger.PrintLog(ex.Message, ENUM.Enums.LogType.Error);
+                throw ex;
             }
-            return (ds.Tables[0]);
+
         }
 
         public static DataTable GetSqlTable(string sql)
         {
             GetDataSet(sql);//פתיחת טבלה 
             return (ds.Tables[0]);
+        }
+
+        //a function that insert a new row to the table in the access database 
+        public static void InsertRow(string tableName, Dictionary<string, string> dict)
+        {
+            try
+            {
+                //TODO: TEST!!!!
+
+                //add the new row that contains the new data in dict to the table
+                DataRow dr = ds.Tables[tableName].NewRow();
+                foreach (KeyValuePair<string, string> kvp in dict)
+                {
+                    dr[kvp.Key] = kvp.Value;
+                }
+                ds.Tables[tableName].Rows.Add(dr);
+                //update the database
+                da.Update(ds, tableName);
+
+            }
+            catch (Exception ex)
+            {
+                LOGGER.Logger.PrintLog("error in InsertRow() func: " + ex.Message, ENUM.Enums.LogType.Error);
+            }
         }
     }
 }

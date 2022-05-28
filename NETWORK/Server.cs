@@ -33,6 +33,11 @@ namespace IdanLalezari326643269.NETWORK
                     break;
                 case ENUM.Enums.MsgCode.Login:
                     break;
+                case ENUM.Enums.MsgCode.InsertRow:
+                    // given a json, deserialize it to a dictionary and insert the row to the table in the access database 
+                    var dict = JsonConvert.DeserializeObject<Dictionary<string, string>>(nm.msg);
+                    DATA.DAL.InsertRow(dict["TableName"], dict);
+                    break;
                 default:
                     break;
             }

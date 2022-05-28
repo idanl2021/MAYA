@@ -89,5 +89,15 @@ namespace IdanLalezari326643269.FORMS
         {
             UTILITIES.FormUtilities.AddFormToPanel<LessonForm>(mainPanel);
         }
+
+        private void hour_LBL_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void mainPanel_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

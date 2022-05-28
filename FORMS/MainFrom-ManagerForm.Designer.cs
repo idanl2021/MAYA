@@ -28,6 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.numOfStudents_LBL = new System.Windows.Forms.Label();
@@ -38,6 +41,8 @@
             this.label6 = new System.Windows.Forms.Label();
             this.numOfClasses_LBL = new System.Windows.Forms.Label();
             this.DateLabel = new System.Windows.Forms.Label();
+            this.GenderChart = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            ((System.ComponentModel.ISupportInitialize)(this.GenderChart)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -139,11 +144,30 @@
             this.DateLabel.TabIndex = 9;
             this.DateLabel.Text = "DATE";
             // 
+            // GenderChart
+            // 
+            this.GenderChart.BackColor = System.Drawing.Color.Transparent;
+            chartArea1.Name = "ChartArea1";
+            this.GenderChart.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.GenderChart.Legends.Add(legend1);
+            this.GenderChart.Location = new System.Drawing.Point(33, 79);
+            this.GenderChart.Name = "GenderChart";
+            series1.ChartArea = "ChartArea1";
+            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
+            series1.Legend = "Legend1";
+            series1.Name = "s_gender";
+            this.GenderChart.Series.Add(series1);
+            this.GenderChart.Size = new System.Drawing.Size(325, 309);
+            this.GenderChart.TabIndex = 10;
+            this.GenderChart.Text = "chart1";
+            // 
             // MainFrom_ManagerForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(921, 595);
+            this.Controls.Add(this.GenderChart);
             this.Controls.Add(this.DateLabel);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.numOfClasses_LBL);
@@ -157,6 +181,7 @@
             this.Name = "MainFrom_ManagerForm";
             this.Text = "MainFrom_ManagerForm";
             this.Load += new System.EventHandler(this.MainFrom_ManagerForm_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.GenderChart)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -174,5 +199,6 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label numOfClasses_LBL;
         private System.Windows.Forms.Label DateLabel;
+        private System.Windows.Forms.DataVisualization.Charting.Chart GenderChart;
     }
 }

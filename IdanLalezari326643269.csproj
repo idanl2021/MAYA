@@ -96,6 +96,7 @@
     <Compile Include="CLASS\Lesson.cs" />
     <Compile Include="CLASS\Person.cs" />
     <Compile Include="CLASS\School.cs" />
+    <Compile Include="CLASS\SharedHashTable.cs" />
     <Compile Include="CLASS\SharedObject.cs" />
     <Compile Include="CLASS\Student.cs" />
     <Compile Include="CLASS\Teachers.cs" />
@@ -120,6 +121,18 @@
     </Compile>
     <Compile Include="DATA\DAL.cs" />
     <Compile Include="ENUM\Enums.cs" />
+    <Compile Include="FORMS\AssignmentsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORMS\AssignmentsForm.Designer.cs">
+      <DependentUpon>AssignmentsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FORMS\AssignmentStudentForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORMS\AssignmentStudentForm.Designer.cs">
+      <DependentUpon>AssignmentStudentForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="FORMS\ClassesForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -151,6 +164,12 @@
     <Compile Include="FORMS\LoginForm.Designer.cs">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="FORMS\MainFormOfStudents.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORMS\MainFormOfStudents.Designer.cs">
+      <DependentUpon>MainFormOfStudents.cs</DependentUpon>
+    </Compile>
     <Compile Include="FORMS\MainFrom-ManagerForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -162,6 +181,12 @@
     </Compile>
     <Compile Include="FORMS\ManagerMainForm.Designer.cs">
       <DependentUpon>ManagerMainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FORMS\sendAssignmentForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORMS\sendAssignmentForm.Designer.cs">
+      <DependentUpon>sendAssignmentForm.cs</DependentUpon>
     </Compile>
     <Compile Include="FORMS\StartForm.cs">
       <SubType>Form</SubType>
@@ -212,6 +237,12 @@
     <EmbeddedResource Include="CONTROLS\NavButton.resx">
       <DependentUpon>NavButton.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FORMS\AssignmentsForm.resx">
+      <DependentUpon>AssignmentsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORMS\AssignmentStudentForm.resx">
+      <DependentUpon>AssignmentStudentForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FORMS\ClassesForm.resx">
       <DependentUpon>ClassesForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -227,11 +258,17 @@
     <EmbeddedResource Include="FORMS\LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FORMS\MainFormOfStudents.resx">
+      <DependentUpon>MainFormOfStudents.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FORMS\MainFrom-ManagerForm.resx">
       <DependentUpon>MainFrom-ManagerForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FORMS\ManagerMainForm.resx">
       <DependentUpon>ManagerMainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORMS\sendAssignmentForm.resx">
+      <DependentUpon>sendAssignmentForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FORMS\StartForm.resx">
       <DependentUpon>StartForm.cs</DependentUpon>
@@ -255,6 +292,7 @@
     <EmbeddedResource Include="FORMS\TeachersForm.resx">
       <DependentUpon>TeachersForm.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="ClassDiagram1.cd" />
     <None Include="IdanLalezari326643269DataSet.xsc">
       <DependentUpon>IdanLalezari326643269DataSet.xsd</DependentUpon>
     </None>

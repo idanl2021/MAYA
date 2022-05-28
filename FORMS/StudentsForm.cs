@@ -60,6 +60,13 @@ namespace IdanLalezari326643269.FORMS
 
         }
 
+        //create a function that add two numbers and return the result -- github copilot
+        int Add(int a, int b)
+        {
+            return a + b;
+        }
+
+
         private void label1_Click(object sender, EventArgs e)
         {
 
@@ -173,9 +180,15 @@ namespace IdanLalezari326643269.FORMS
             return str;
         }
 
-        private void Save_BTN_Click(object sender, EventArgs e)
+        override protected void Save_BTN_Click(object sender, EventArgs e)
         {
-
+            base.Save_BTN_Click(sender, e);
+            Dictionary<string, string> dict = new Dictionary<string, string>();
+            dict.Add("ID", StudentID_Input_string_1.Text);
+            dict.Add("Password", StudentID_Input_string_1.Text);
+            dict.Add("Group", "Students");
+            dict.Add("Gender", Gender_Input_string_9.Text);
+            DAL.InsertRow("Users", dict);
         }
 
         private void Update_BTN_Click(object sender, EventArgs e)
@@ -286,6 +299,11 @@ namespace IdanLalezari326643269.FORMS
             {
                 DisplayRecords(0);
             }
+        }
+
+        private void ClassName_Input_string_4_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -53,6 +53,12 @@
             this.Title.Size = new System.Drawing.Size(84, 25);
             this.Title.Text = "שיעורים";
             // 
+            // comboBox1
+            // 
+            this.comboBox1.Items.AddRange(new object[] {
+            "לפי שם שיעור",
+            "לפי תז מורה"});
+            // 
             // label1
             // 
             this.label1.AutoSize = true;

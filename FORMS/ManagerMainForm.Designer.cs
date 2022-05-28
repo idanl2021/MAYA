@@ -147,6 +147,7 @@
             this.hour_LBL.Size = new System.Drawing.Size(85, 32);
             this.hour_LBL.TabIndex = 2;
             this.hour_LBL.Text = "00:00";
+            this.hour_LBL.Click += new System.EventHandler(this.hour_LBL_Click);
             // 
             // greetingLabel
             // 
@@ -184,6 +185,7 @@
             this.mainPanel.Name = "mainPanel";
             this.mainPanel.Size = new System.Drawing.Size(967, 634);
             this.mainPanel.TabIndex = 2;
+            this.mainPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.mainPanel_Paint);
             // 
             // timer_HourLBL
             // 

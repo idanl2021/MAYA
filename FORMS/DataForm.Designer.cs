@@ -70,6 +70,7 @@ namespace IdanLalezari326643269.FORMS
             this.dataGridView.Name = "dataGridView";
             this.dataGridView.Size = new System.Drawing.Size(847, 219);
             this.dataGridView.TabIndex = 38;
+            this.dataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_CellContentClick);
             this.dataGridView.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView_RowHeaderMouseClick);
             // 
             // Title

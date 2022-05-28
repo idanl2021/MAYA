@@ -36,7 +36,9 @@ namespace IdanLalezari326643269.ENUM
             OpenTableSelectAllFrom,
             SendSQLquery,
             IsUser,
-            Login
+            Login,
+            InsertRow,
+            UpdateRow,
         }
 
         public enum UserGroup

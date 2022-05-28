@@ -1,4 +1,6 @@
 ﻿
+using System;
+
 namespace IdanLalezari326643269
 {
     partial class TeachersForm
@@ -54,6 +56,10 @@ namespace IdanLalezari326643269
             this.Title.Size = new System.Drawing.Size(63, 25);
             this.Title.Text = "מורים";
             // 
+            // Save_BTN
+            // 
+            this.Save_BTN.Click += new System.EventHandler(this.Save_BTN_Click);
+            // 
             // comboBox1
             // 
             this.comboBox1.Items.AddRange(new object[] {
@@ -62,6 +68,10 @@ namespace IdanLalezari326643269
             "לפי שם משפחה",
             "לפי עיר",
             "לפי תאריך לידה"});
+            // 
+            // Search_BTN
+            // 
+            this.Search_BTN.Click += new System.EventHandler(this.Search_BTN_Click);
             // 
             // TeacherID_Input_string_1
             // 
@@ -229,6 +239,8 @@ namespace IdanLalezari326643269
             this.PerformLayout();
 
         }
+
+        
 
         #endregion
 

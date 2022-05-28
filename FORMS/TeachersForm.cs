@@ -103,7 +103,41 @@ namespace IdanLalezari326643269
         private void AddRecord_BTN_Click_1(object sender, EventArgs e)
         {
             toAddUser = true;
-          
+
+        }
+
+        protected void Save_BTN_Click(object sender, EventArgs e)
+        {
+            base.Save_BTN_Click(sender, e);
+            Dictionary<string, string> dict = new Dictionary<string, string>();
+            dict.Add("TableName", "Teachers");
+            dict.Add("TeacherID", TeacherID_Input_string_1.Text);
+            dict.Add("FirstName", FirstName_Input_string_2.Text);
+            dict.Add("LastName", LastName_Input_string_3.Text);
+            dict.Add("City", City_Input_string_5.Text);
+            dict.Add("BirthDate", BirthDate_Input_address_6.Text);
+            //add new record to the teachers table and update the data grid view and add a user to the users table 
+            if (toAddUser)
+            {
+                
+                NETWORK.DatabaseServer.InsertRow("Teachers", dict);
+                NETWORK.DatabaseServer.InsertRow("Users", dict);
+            }
+            //update the teachers table and update the data grid view
+            else
+            {
+                //NETWORK.DatabaseServer.UpdateRow("Teachers", dict);
+            }
+            //update the data grid view
+            Table = NETWORK.DatabaseServer.OpenTable_SelectAllFrom("Teachers");
+            UTILITIES.DisplayUtilities.FillDataGrid(dataGridView, Table);
+            DisplayRecords(0);
+
+        }
+
+        private void Search_BTN_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

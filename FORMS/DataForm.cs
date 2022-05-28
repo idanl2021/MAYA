@@ -136,7 +136,7 @@ namespace IdanLalezari326643269.FORMS
             First_BTN.BackgroundImage = null;
         }
 
-        protected void DisplayRecords(int currentRow)
+        protected virtual void DisplayRecords(int currentRow)
         {
             try
             {
@@ -307,12 +307,12 @@ namespace IdanLalezari326643269.FORMS
             ExitEditMode();
         }
 
-        private void Save_BTN_Click(object sender, EventArgs e)
+        protected virtual void Save_BTN_Click(object sender, EventArgs e)
         {
             Save();
         }
 
-        public void Save()
+        public void Save() ///////////////////////////////////////////////////////////
         {
             string errorString = CheckInput();
             if (errorString == "")
@@ -501,6 +501,11 @@ namespace IdanLalezari326643269.FORMS
             ChangeInputControlEnabled(false);
         }
 
+        private void dataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
 
         //protected void Display<ClassType>(object obj)
         //{
@@ -527,7 +532,7 @@ namespace IdanLalezari326643269.FORMS
         //        }
         //    }
         //}
-        
+
 
     }
 }
